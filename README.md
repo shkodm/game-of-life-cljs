@@ -6,7 +6,7 @@
 
 ## Development
 
-To get an interactive development environment run:
+To get an interactive development environment run using [Leiningen](https://leiningen.org/).
 
     lein fig:build
 

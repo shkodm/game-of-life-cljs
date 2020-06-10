@@ -35,7 +35,7 @@ button {
     background-color: green;
     cursor: pointer;
     background-size: cover;
-    background-image: url("");
+    background-image: url("https://raw.githubusercontent.com/shkodm/game-of-life-cljs/master/corona.png");
 }
 
 #game_container {
