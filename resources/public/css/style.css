@@ -31,8 +31,8 @@ button {
 .alive_cell {
     width: 20px;
     height: 20px;
-    border: 1px solid black;
-    background-color: green;
+    border: 1px solid grey;
+    background-color: lightgrey;
     cursor: pointer;
     background-size: cover;
     background-image: url("https://raw.githubusercontent.com/shkodm/game-of-life-cljs/master/corona.png");

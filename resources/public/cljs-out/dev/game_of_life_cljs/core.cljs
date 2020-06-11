@@ -9,6 +9,15 @@
 (def dead-class
   (str "cell"))
 
+(def game-container-id
+  (str "game_container"))
+
+(def startbutton-id
+  (str "startbutton"))
+
+(def stopbutton-id
+  (str "stopbutton"))
+
 (def grid-dimensions
   (hash-map :x 45 :y 30))
 
@@ -41,6 +50,7 @@
                          numy (:y grid-dimensions)]
                         (reduce (fn [red, x]
             (reduce (fn [red2, y]
+                      ;; mapping coords to unique key is better idea then nested map or array mess
                       (assoc red2 (make-key x y) (hash-map :alive false)))
                     red
                     (range numy)))
@@ -54,11 +64,12 @@
                                  (set! (.-innerHTML selected) (str "Iteration " ns)))))
 
 (defn get-state-difference
-  ;; Get the cells that changes their state
+  "Get the cells that changes their state"
   [prev current]
   (into (hash-map) (s/difference (set current) (set prev))))
 
 (defn rerender-grid
+  "Rerender grid cells that changed"
   [cells]
   (doseq [cell cells]
     (set-cell-class (first cell) (if (:alive (second cell)) alive-class dead-class))))
@@ -72,9 +83,9 @@
   [id]
   (reset! grid (assoc @grid id (hash-map :alive (if (= (get-class-by-id id) dead-class) true false)))))
 
-;; https://github.com/onitica/clojurescript-game-of-life/blob/51b8fce8ef20aa5aa90f4e836e281f9b74bd922a/src-cljs/game_of_life/game.cljs
-(defn create-element [mainElement content id class]
-  ;; Create element and append to a particular dom
+(defn create-element
+  "Create element and append to a particular dom"
+  [mainElement content id class]
   (let [element (.createElement js/document "div")]
     (.appendChild mainElement element)
     (set! (.-className element) class)
@@ -84,6 +95,7 @@
 )
 
 (def cell-neighbors-relative
+   "Generate neighbors lattice around {0 0} cell"
   (reduce (fn [red, x]
             (into red (filter (fn [{x :x y :y}] (not (and (= 0 x) (= 0 y)))) (map #(hash-map :y % :x x)  '(-1 0 1)))))
           []
@@ -130,7 +142,6 @@
             @grid)
  ))
 
-;; here we create a map and swap with previous state
 (defn make-update []
   (reset! grid (make-next-generation))
   (swap! counter inc)
@@ -146,8 +157,8 @@
 (defn run []
   (let [periodic-update (js/setInterval make-update 300)
         cancel-update #(js/clearInterval periodic-update)
-        start-button (.getElementById js/document "startbutton")
-        stop-button (.getElementById js/document "stopbutton")
+        start-button (.getElementById js/document startbutton-id)
+        stop-button (.getElementById js/document stopbutton-id)
         toggle-buttons (fn [] (toggle-show start-button) (toggle-show stop-button))]
     (toggle-buttons)
     (set! (.-onclick start-button) run)
@@ -155,8 +166,8 @@
 
 ;; NOTE: This is in order to not duplicate element creation on reloading
 (defonce creator
-  (let [mainElement (.getElementById js/document "game_container")
-        start-button (.getElementById js/document "startbutton")]
+  (let [mainElement (.getElementById js/document game-container-id)
+        start-button (.getElementById js/document startbutton-id)]
     (doseq [cell (sort (fn [lcell, rcell]
                          (let [l (id-to-coord (first lcell))
                                r (id-to-coord (first rcell))]
