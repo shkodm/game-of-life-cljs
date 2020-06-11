@@ -18,14 +18,14 @@ return devtools.formatters.state._STAR_current_state_STAR_;
 });
 devtools.formatters.state.update_current_state_BANG_ = (function devtools$formatters$state$update_current_state_BANG_(var_args){
 var args__4736__auto__ = [];
-var len__4730__auto___9959 = arguments.length;
-var i__4731__auto___9960 = (0);
+var len__4730__auto___13133 = arguments.length;
+var i__4731__auto___13134 = (0);
 while(true){
-if((i__4731__auto___9960 < len__4730__auto___9959)){
-args__4736__auto__.push((arguments[i__4731__auto___9960]));
+if((i__4731__auto___13134 < len__4730__auto___13133)){
+args__4736__auto__.push((arguments[i__4731__auto___13134]));
 
-var G__9961 = (i__4731__auto___9960 + (1));
-i__4731__auto___9960 = G__9961;
+var G__13135 = (i__4731__auto___13134 + (1));
+i__4731__auto___13134 = G__13135;
 continue;
 } else {
 }
@@ -48,11 +48,11 @@ return devtools.formatters.state._STAR_current_state_STAR_ = cljs.core.apply.cal
 devtools.formatters.state.update_current_state_BANG_.cljs$lang$maxFixedArity = (1);
 
 /** @this {Function} */
-devtools.formatters.state.update_current_state_BANG_.cljs$lang$applyTo = (function (seq9957){
-var G__9958 = cljs.core.first.call(null,seq9957);
-var seq9957__$1 = cljs.core.next.call(null,seq9957);
+devtools.formatters.state.update_current_state_BANG_.cljs$lang$applyTo = (function (seq13131){
+var G__13132 = cljs.core.first.call(null,seq13131);
+var seq13131__$1 = cljs.core.next.call(null,seq13131);
 var self__4717__auto__ = this;
-return self__4717__auto__.cljs$core$IFn$_invoke$arity$variadic(G__9958,seq9957__$1);
+return self__4717__auto__.cljs$core$IFn$_invoke$arity$variadic(G__13132,seq13131__$1);
 });
 
 devtools.formatters.state.push_object_to_current_history_BANG_ = (function devtools$formatters$state$push_object_to_current_history_BANG_(object){
@@ -64,8 +64,8 @@ return new cljs.core.Keyword(null,"history","history",-247395220).cljs$core$IFn$
 devtools.formatters.state.is_circular_QMARK_ = (function devtools$formatters$state$is_circular_QMARK_(object){
 var history = devtools.formatters.state.get_current_history.call(null);
 return cljs.core.some.call(null,((function (history){
-return (function (p1__9962_SHARP_){
-return (p1__9962_SHARP_ === object);
+return (function (p1__13136_SHARP_){
+return (p1__13136_SHARP_ === object);
 });})(history))
 ,history);
 });

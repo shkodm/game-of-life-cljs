@@ -16,8 +16,8 @@ game_of_life_cljs.core.make_key = (function game_of_life_cljs$core$make_key(x,y)
 return [cljs.core.str.cljs$core$IFn$_invoke$arity$1(x),"_",cljs.core.str.cljs$core$IFn$_invoke$arity$1(y)].join('');
 });
 game_of_life_cljs.core.set_cell_class = (function game_of_life_cljs$core$set_cell_class(var_args){
-var G__8870 = arguments.length;
-switch (G__8870) {
+var G__11852 = arguments.length;
+switch (G__11852) {
 case 3:
 return game_of_life_cljs.core.set_cell_class.cljs$core$IFn$_invoke$arity$3((arguments[(0)]),(arguments[(1)]),(arguments[(2)]));
 
@@ -83,53 +83,53 @@ return cljs.core.into.call(null,cljs.core.PersistentHashMap.EMPTY,clojure.set.di
  * Rerender grid cells that changed
  */
 game_of_life_cljs.core.rerender_grid = (function game_of_life_cljs$core$rerender_grid(cells){
-var seq__8872 = cljs.core.seq.call(null,cells);
-var chunk__8873 = null;
-var count__8874 = (0);
-var i__8875 = (0);
+var seq__11854 = cljs.core.seq.call(null,cells);
+var chunk__11855 = null;
+var count__11856 = (0);
+var i__11857 = (0);
 while(true){
-if((i__8875 < count__8874)){
-var cell = cljs.core._nth.call(null,chunk__8873,i__8875);
+if((i__11857 < count__11856)){
+var cell = cljs.core._nth.call(null,chunk__11855,i__11857);
 game_of_life_cljs.core.set_cell_class.call(null,cljs.core.first.call(null,cell),(cljs.core.truth_(new cljs.core.Keyword(null,"alive","alive",1424929930).cljs$core$IFn$_invoke$arity$1(cljs.core.second.call(null,cell)))?game_of_life_cljs.core.alive_class:game_of_life_cljs.core.dead_class));
 
 
-var G__8876 = seq__8872;
-var G__8877 = chunk__8873;
-var G__8878 = count__8874;
-var G__8879 = (i__8875 + (1));
-seq__8872 = G__8876;
-chunk__8873 = G__8877;
-count__8874 = G__8878;
-i__8875 = G__8879;
+var G__11858 = seq__11854;
+var G__11859 = chunk__11855;
+var G__11860 = count__11856;
+var G__11861 = (i__11857 + (1));
+seq__11854 = G__11858;
+chunk__11855 = G__11859;
+count__11856 = G__11860;
+i__11857 = G__11861;
 continue;
 } else {
-var temp__5457__auto__ = cljs.core.seq.call(null,seq__8872);
+var temp__5457__auto__ = cljs.core.seq.call(null,seq__11854);
 if(temp__5457__auto__){
-var seq__8872__$1 = temp__5457__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__8872__$1)){
-var c__4550__auto__ = cljs.core.chunk_first.call(null,seq__8872__$1);
-var G__8880 = cljs.core.chunk_rest.call(null,seq__8872__$1);
-var G__8881 = c__4550__auto__;
-var G__8882 = cljs.core.count.call(null,c__4550__auto__);
-var G__8883 = (0);
-seq__8872 = G__8880;
-chunk__8873 = G__8881;
-count__8874 = G__8882;
-i__8875 = G__8883;
+var seq__11854__$1 = temp__5457__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__11854__$1)){
+var c__4550__auto__ = cljs.core.chunk_first.call(null,seq__11854__$1);
+var G__11862 = cljs.core.chunk_rest.call(null,seq__11854__$1);
+var G__11863 = c__4550__auto__;
+var G__11864 = cljs.core.count.call(null,c__4550__auto__);
+var G__11865 = (0);
+seq__11854 = G__11862;
+chunk__11855 = G__11863;
+count__11856 = G__11864;
+i__11857 = G__11865;
 continue;
 } else {
-var cell = cljs.core.first.call(null,seq__8872__$1);
+var cell = cljs.core.first.call(null,seq__11854__$1);
 game_of_life_cljs.core.set_cell_class.call(null,cljs.core.first.call(null,cell),(cljs.core.truth_(new cljs.core.Keyword(null,"alive","alive",1424929930).cljs$core$IFn$_invoke$arity$1(cljs.core.second.call(null,cell)))?game_of_life_cljs.core.alive_class:game_of_life_cljs.core.dead_class));
 
 
-var G__8884 = cljs.core.next.call(null,seq__8872__$1);
-var G__8885 = null;
-var G__8886 = (0);
-var G__8887 = (0);
-seq__8872 = G__8884;
-chunk__8873 = G__8885;
-count__8874 = G__8886;
-i__8875 = G__8887;
+var G__11866 = cljs.core.next.call(null,seq__11854__$1);
+var G__11867 = null;
+var G__11868 = (0);
+var G__11869 = (0);
+seq__11854 = G__11866;
+chunk__11855 = G__11867;
+count__11856 = G__11868;
+i__11857 = G__11869;
 continue;
 }
 } else {
@@ -166,25 +166,25 @@ return game_of_life_cljs.core.switch_state.call(null,id);
  * Generate neighbors lattice around {0 0} cell
  */
 game_of_life_cljs.core.cell_neighbors_relative = cljs.core.reduce.call(null,(function (red,x){
-return cljs.core.into.call(null,red,cljs.core.filter.call(null,(function (p__8889){
-var map__8890 = p__8889;
-var map__8890__$1 = (((((!((map__8890 == null))))?(((((map__8890.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__8890.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__8890):map__8890);
-var x__$1 = cljs.core.get.call(null,map__8890__$1,new cljs.core.Keyword(null,"x","x",2099068185));
-var y = cljs.core.get.call(null,map__8890__$1,new cljs.core.Keyword(null,"y","y",-1757859776));
+return cljs.core.into.call(null,red,cljs.core.filter.call(null,(function (p__11871){
+var map__11872 = p__11871;
+var map__11872__$1 = (((((!((map__11872 == null))))?(((((map__11872.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__11872.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__11872):map__11872);
+var x__$1 = cljs.core.get.call(null,map__11872__$1,new cljs.core.Keyword(null,"x","x",2099068185));
+var y = cljs.core.get.call(null,map__11872__$1,new cljs.core.Keyword(null,"y","y",-1757859776));
 return (!(((cljs.core._EQ_.call(null,(0),x__$1)) && (cljs.core._EQ_.call(null,(0),y)))));
-}),cljs.core.map.call(null,(function (p1__8888_SHARP_){
-return cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"x","x",2099068185)],[p1__8888_SHARP_,x]);
+}),cljs.core.map.call(null,(function (p1__11870_SHARP_){
+return cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"y","y",-1757859776),new cljs.core.Keyword(null,"x","x",2099068185)],[p1__11870_SHARP_,x]);
 }),cljs.core.list((-1),(0),(1)))));
 }),cljs.core.PersistentVector.EMPTY,cljs.core.list((-1),(0),(1)));
 game_of_life_cljs.core.get_cell_num_alive_neighbors = (function game_of_life_cljs$core$get_cell_num_alive_neighbors(x,y){
 var maxx = new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(game_of_life_cljs.core.grid_dimensions);
 var maxy = new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(game_of_life_cljs.core.grid_dimensions);
 var neighbors = cljs.core.reduce.call(null,((function (maxx,maxy){
-return (function (red,p__8892){
-var map__8893 = p__8892;
-var map__8893__$1 = (((((!((map__8893 == null))))?(((((map__8893.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__8893.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__8893):map__8893);
-var x_shift = cljs.core.get.call(null,map__8893__$1,new cljs.core.Keyword(null,"x","x",2099068185));
-var y_shift = cljs.core.get.call(null,map__8893__$1,new cljs.core.Keyword(null,"y","y",-1757859776));
+return (function (red,p__11874){
+var map__11875 = p__11874;
+var map__11875__$1 = (((((!((map__11875 == null))))?(((((map__11875.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__11875.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__11875):map__11875);
+var x_shift = cljs.core.get.call(null,map__11875__$1,new cljs.core.Keyword(null,"x","x",2099068185));
+var y_shift = cljs.core.get.call(null,map__11875__$1,new cljs.core.Keyword(null,"y","y",-1757859776));
 return cljs.core.conj.call(null,red,cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"x","x",2099068185),new cljs.core.Keyword(null,"y","y",-1757859776)],[(x + x_shift),(y + y_shift)]));
 });})(maxx,maxy))
 ,cljs.core.PersistentVector.EMPTY,game_of_life_cljs.core.cell_neighbors_relative);
@@ -254,63 +254,63 @@ if((typeof game_of_life_cljs !== 'undefined') && (typeof game_of_life_cljs.core 
 } else {
 game_of_life_cljs.core.creator = (function (){var mainElement = document.getElementById(game_of_life_cljs.core.game_container_id);
 var start_button = document.getElementById(game_of_life_cljs.core.startbutton_id);
-var seq__8895 = cljs.core.seq.call(null,cljs.core.sort.call(null,((function (mainElement,start_button){
+var seq__11877 = cljs.core.seq.call(null,cljs.core.sort.call(null,((function (mainElement,start_button){
 return (function (lcell,rcell){
 var l = game_of_life_cljs.core.id_to_coord.call(null,cljs.core.first.call(null,lcell));
 var r = game_of_life_cljs.core.id_to_coord.call(null,cljs.core.first.call(null,rcell));
 return (((new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(l) < new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(r))) || (((cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(l),new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(r))) && ((new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(l) < new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(r))))));
 });})(mainElement,start_button))
 ,cljs.core.deref.call(null,game_of_life_cljs.core.grid)));
-var chunk__8896 = null;
-var count__8897 = (0);
-var i__8898 = (0);
+var chunk__11878 = null;
+var count__11879 = (0);
+var i__11880 = (0);
 while(true){
-if((i__8898 < count__8897)){
-var cell = cljs.core._nth.call(null,chunk__8896,i__8898);
+if((i__11880 < count__11879)){
+var cell = cljs.core._nth.call(null,chunk__11878,i__11880);
 game_of_life_cljs.core.create_element.call(null,mainElement,"",cljs.core.first.call(null,cell),game_of_life_cljs.core.dead_class);
 
 start_button.onclick = game_of_life_cljs.core.run;
 
 
-var G__8899 = seq__8895;
-var G__8900 = chunk__8896;
-var G__8901 = count__8897;
-var G__8902 = (i__8898 + (1));
-seq__8895 = G__8899;
-chunk__8896 = G__8900;
-count__8897 = G__8901;
-i__8898 = G__8902;
+var G__11881 = seq__11877;
+var G__11882 = chunk__11878;
+var G__11883 = count__11879;
+var G__11884 = (i__11880 + (1));
+seq__11877 = G__11881;
+chunk__11878 = G__11882;
+count__11879 = G__11883;
+i__11880 = G__11884;
 continue;
 } else {
-var temp__5457__auto__ = cljs.core.seq.call(null,seq__8895);
+var temp__5457__auto__ = cljs.core.seq.call(null,seq__11877);
 if(temp__5457__auto__){
-var seq__8895__$1 = temp__5457__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__8895__$1)){
-var c__4550__auto__ = cljs.core.chunk_first.call(null,seq__8895__$1);
-var G__8903 = cljs.core.chunk_rest.call(null,seq__8895__$1);
-var G__8904 = c__4550__auto__;
-var G__8905 = cljs.core.count.call(null,c__4550__auto__);
-var G__8906 = (0);
-seq__8895 = G__8903;
-chunk__8896 = G__8904;
-count__8897 = G__8905;
-i__8898 = G__8906;
+var seq__11877__$1 = temp__5457__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__11877__$1)){
+var c__4550__auto__ = cljs.core.chunk_first.call(null,seq__11877__$1);
+var G__11885 = cljs.core.chunk_rest.call(null,seq__11877__$1);
+var G__11886 = c__4550__auto__;
+var G__11887 = cljs.core.count.call(null,c__4550__auto__);
+var G__11888 = (0);
+seq__11877 = G__11885;
+chunk__11878 = G__11886;
+count__11879 = G__11887;
+i__11880 = G__11888;
 continue;
 } else {
-var cell = cljs.core.first.call(null,seq__8895__$1);
+var cell = cljs.core.first.call(null,seq__11877__$1);
 game_of_life_cljs.core.create_element.call(null,mainElement,"",cljs.core.first.call(null,cell),game_of_life_cljs.core.dead_class);
 
 start_button.onclick = game_of_life_cljs.core.run;
 
 
-var G__8907 = cljs.core.next.call(null,seq__8895__$1);
-var G__8908 = null;
-var G__8909 = (0);
-var G__8910 = (0);
-seq__8895 = G__8907;
-chunk__8896 = G__8908;
-count__8897 = G__8909;
-i__8898 = G__8910;
+var G__11889 = cljs.core.next.call(null,seq__11877__$1);
+var G__11890 = null;
+var G__11891 = (0);
+var G__11892 = (0);
+seq__11877 = G__11889;
+chunk__11878 = G__11890;
+count__11879 = G__11891;
+i__11880 = G__11892;
 continue;
 }
 } else {
